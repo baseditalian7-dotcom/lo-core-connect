@@ -6,6 +6,9 @@ import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type BillingCycle = "monthly" | "annual" | "lifetime";
+type Currency = "brl" | "usd" | "eur";
+
+type BillingCycle = "monthly" | "annual" | "lifetime";
 
 const plans = [
   {
