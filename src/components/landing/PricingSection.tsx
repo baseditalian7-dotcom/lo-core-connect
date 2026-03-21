@@ -142,7 +142,7 @@ export default function PricingSection() {
 
               <div className="mt-6 mb-6">
                 <span className="text-3xl md:text-4xl font-bold text-foreground tabular-nums">
-                  {plan.prices[cycle].brl}
+                  {plan.prices[cycle][currency]}
                 </span>
                 {cycle !== "lifetime" && (
                   <span className="text-muted-foreground text-sm ml-1">
