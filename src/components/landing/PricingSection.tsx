@@ -80,12 +80,12 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        {/* Toggle */}
+        {/* Toggles */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex justify-center mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <div className="inline-flex rounded-lg bg-secondary p-1 gap-1">
             {(Object.keys(cycleLabels) as BillingCycle[]).map((key) => (
@@ -99,6 +99,21 @@ export default function PricingSection() {
                 }`}
               >
                 {cycleLabels[key]}
+              </button>
+            ))}
+          </div>
+          <div className="inline-flex rounded-lg bg-secondary p-1 gap-1">
+            {(Object.keys(currencyLabels) as Currency[]).map((key) => (
+              <button
+                key={key}
+                onClick={() => setCurrency(key)}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  currency === key
+                    ? "bg-card text-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {currencyLabels[key]}
               </button>
             ))}
           </div>
