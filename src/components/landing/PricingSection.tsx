@@ -50,8 +50,15 @@ const cycleLabels: Record<BillingCycle, string> = {
   lifetime: "Lifetime",
 };
 
+const currencyLabels: Record<Currency, string> = {
+  brl: "R$",
+  usd: "US$",
+  eur: "€",
+};
+
 export default function PricingSection() {
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
+  const [currency, setCurrency] = useState<Currency>("brl");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
